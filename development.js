@@ -5,6 +5,7 @@ const src  = path.resolve(__dirname, 'src')
 const dist = path.resolve(__dirname, 'dist')
 
 export default {
+  mode: 'development',
   entry: src + '/index.jsx',
 
   output: {
@@ -13,17 +14,17 @@ export default {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loader: 'babel-loader'
       }
     ]
   },
 
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['.js','jsx']
   },
 
   plugins: [
